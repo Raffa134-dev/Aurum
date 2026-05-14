@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+> Progetto personale — brand di orologi di lusso immaginario, realizzato a scopo dimostrativo.
 
-## Getting Started
+---
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+| Tecnologia | Versione |
+|---|---|
+| Next.js (App Router) | 15 |
+| TypeScript | 5 (strict mode) |
+| Tailwind CSS | 3.4 |
+| Framer Motion | 11 |
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Struttura del progetto
+aurum/
+├── public/
+│   └── img/                        # Immagini statiche orologi
+├── src/
+│   ├── app/
+│   │   ├── page.tsx                # Homepage
+│   │   ├── layout.tsx              # Layout globale + metadata
+│   │   ├── globals.css             # Stili globali + font
+│   │   ├── collection/
+│   │   │   ├── page.tsx            # Griglia collezione con filtri
+│   │   │   └── [slug]/
+│   │   │       ├── page.tsx        # Route dinamica prodotto
+│   │   │       └── ProductDetailClient.tsx
+│   │   ├── manifesto/
+│   │   │   └── page.tsx
+│   │   ├── atelier/
+│   │   │   └── page.tsx
+│   │   └── contact/
+│   │       └── page.tsx
+│   ├── components/
+│   │   ├── Navbar.tsx              # Fixed, headroom behavior
+│   │   ├── CustomCursor.tsx        # Cursore personalizzato
+│   │   ├── Loader.tsx              # Schermata di caricamento iniziale
+│   │   ├── PageTransition.tsx      # Animazione cambio pagina
+│   │   ├── HeroSection.tsx         # Hero fullscreen con testo animato
+│   │   ├── ProductCard.tsx         # Card prodotto con hover reveal
+│   │   ├── CountdownTimer.tsx      # Countdown live collezione
+│   │   ├── PoetrySection.tsx       # Sezione testuale con parallax
+│   │   ├── FooterSection.tsx       # Footer con newsletter
+│   │   └── CookieBanner.tsx        # Banner cookie con preferenze
+│   ├── data/
+│   │   └── products.ts             # 6 orologi mock con dati realistici
+│   └── types/
+│       └── index.ts                # Tipi TypeScript (Product, Variant, ecc.)
+├── .env.local
+├── .gitignore
+├── tailwind.config.ts
+└── package.json
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Pagine
 
-To learn more about Next.js, take a look at the following resources:
+| Route | Descrizione |
+|---|---|
+| `/` | Homepage con hero, sezione poetica, featured products e countdown |
+| `/collection` | Griglia completa con filtri per linea, materiale e movimento |
+| `/collection/[slug]` | Pagina prodotto con galleria, configuratore e modale consultazione |
+| `/manifesto` | Filosofia del brand in 5 principi con scroll animato |
+| `/atelier` | Processo produttivo in 4 fasi con immagini alternate |
+| `/contact` | Form di contatto con sidebar informazioni |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Funzionalità principali
 
-## Deploy on Vercel
+- **Navbar headroom** — si nasconde sullo scroll verso il basso, riappare verso l'alto
+- **Configuratore prodotto** — selezione cassa e cinturino con preview e prezzo in tempo reale
+- **Countdown live** — timer aggiornato ogni secondo verso la data di lancio collezione
+- **Cookie banner** — consenso granulare con preferenze salvate in localStorage
+- **Filtri collezione** — filtraggio per linea, materiale e movimento con conteggio risultati
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
