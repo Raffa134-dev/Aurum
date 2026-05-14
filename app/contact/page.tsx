@@ -24,7 +24,7 @@ const subjects = [
 const contacts = [
   {
     label: "Atelier principale",
-    value: "Via Francesco Sforza 69, Milano, Italia",
+    value: "Via Francesco Sforza 69, Busto Arsizio, Italia",
   },
   {
     label: "Corrispondenza",

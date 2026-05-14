@@ -59,7 +59,7 @@ export default function AtelierPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
             >
-              Le Vallée de Joux, Svizzera
+              Busto Arsizio, Italia
             </motion.p>
             <motion.h1
               className="font-serif text-[clamp(3rem,7vw,6rem)] text-ivory leading-[1.0] mb-8"
@@ -75,7 +75,7 @@ export default function AtelierPage() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              A 1000 metri di altitudine, nel silenzio della Valle del Giura, 
+              A 1000 metri di altitudine, nel silenzio di Busto Arsizio, 
               quarantasette maestri trasformano il metallo in tempo.
             </motion.p>
           </div>
